@@ -1,0 +1,12 @@
+~~~p3 compute max of 2 numbers
+~~~quicker if statement: 
+~~~{statement} ?? {{result if true}} :: {{result if false}} ;;
+
+max x y rattle
+    x > y ?? slither x;; :: slither y;;
+snake
+
+coolNumber_one is 9;;
+coolNumber_two is 5;;
+
+print max coolNumber_one coolNumber_two;

@@ -1,0 +1,21 @@
+~~~ p2 compute the solution of a second order equation
+~~~ the language has a function called solveSecondOrder that is given 4 arguments
+~~~ arguments a,b,c,t, where ax^2 + bx + c = t
+~~~ the print function takes only one argument
+~~~ we can group an expression with {}
+~~~ operators: +, -, *, **, /, %
+~~~ sqrt is a default function
+
+
+solveSecondOrder a, b, c, result rattle
+    c is c - result;;
+    delta is {b ** 2} - {4 * a * c}
+
+    sol1 is {-b - sqrt d } / {2.0 * a}
+    sol2 is {-b + sqrt d } / {2.0 * a}
+
+    slither sol1 sol2
+snake
+
+print solveSecondOrder 1 5 -1 5;;
+

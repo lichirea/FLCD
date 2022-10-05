@@ -1,0 +1,37 @@
+~~~my mini-language is called Rattlesnake, because to end statements you have to use ;;
+~~~which reminds me of a rattlesnake's tail
+~~~the file extension is .rtl
+~~~comments are with ~~~
+
+~~~p1 count how many numbers in a 3 number sequence are bigger than 2
+~~~a variable name has to be a combination of letters and the following symbols: -_
+~~~a variable can be declared with the following syntax:
+~~~variable is {value}, where {value} is a value
+~~~each statement has to end with ;;
+~~~we call the function countBiggerThanTwo with the following syntax
+~~~countBiggerThanTwo {argument1} {argument2} {argument3} ... ;;
+~~~to define a function, we follow the following syntax:
+~~~{function-name} rattle {function statements} snake
+~~~return with slither {value};;
+~~~to define an if statement we use the following syntax:
+~~~if {expression}
+~~~then {statement}
+~~~else {statement}
+
+countBiggerThanTwo a b c rattle
+    count is 0;;
+    if a > 2
+    then count is count + 1;;
+    if b > 2
+    then count is count + 1;;
+    if c > 2
+    then count is count + 1;;
+    
+    slither count;;
+snake
+
+x is 5;;
+y is 6;;
+w is 1;;
+result is countBiggerThanTwo x y w;;
+print result;;

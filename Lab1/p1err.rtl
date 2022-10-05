@@ -1,0 +1,13 @@
+~~~p1err compute sum of x numbers
+~~~the following statements are lexically incorrect in 2 ways
+~~~first, the variable name has a * characters which is not allowed
+~~~second, the second statement doesn't end with a ;;
+~~~This would give the following error at compilation:
+~~~Syntax error: unrecognized symbol "*" at line 5:5
+
+sum a b c d rattle
+    slither a + b + c + d
+snake
+
+cool*number is 1;;
+print sum cool*number 5 6 10;
