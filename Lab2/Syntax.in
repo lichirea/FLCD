@@ -1,0 +1,49 @@
+SYNTAX
+
+function ::= 'start'  declarationList ';;' stmtList 'end'
+
+declarationList ::= declaration | declaration ";" declarationList
+
+declaration ::= identifier'{' type '}'
+
+primitiveType ::= 'num' | 'char'
+
+arrayType ::= primitiveType'['num']'
+
+type ::= primitiveType | arrayType
+
+stmtBlock ::= '[' stmtList ']'
+
+stmtList ::=  stmt ';;' | stmt ';;' stmtList 
+
+stmt ::= simpleStmt | complexStmt
+
+simpleStmt ::= assignStmt | ioStmt
+
+expression ::= expression operator term | term
+
+term ::= identifier | constant
+
+operator ::= '+' | '-' | '/' | '%' | '*'
+
+assignStmt ::= identifier '=' expression
+
+ioStmt ::= readStmt | writeStmt
+
+readStmt ::= input identifier
+
+writeStmt ::= output term
+
+complexStmt ::= ifStmt | whileStmt 
+
+ifstmt ::= 'if' conditions stmtBlock ['else' stmtBlock] 
+
+whileStmt ::= 'while' conditions stmtBlock
+
+conditions ::= condition | condition boolOperator condition
+
+boolOperator ::= '&' | '|'
+
+condition ::= expression relation expression
+
+relation ::= '<' | '<=' | '==' | '>=' | '>' | '=/='

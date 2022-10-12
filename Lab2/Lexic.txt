@@ -1,0 +1,19 @@
+ALPHABET
+a. Lower case letters (a-z) of the English Alphabet;
+b. Underline character '_';
+c. Line character '-';
+d. numbers 0-9
+
+LEXIC
+a. Special symbols, representing:
+- operators = + - * / % < <= == >= > =/=
+- separators {} [] ;; space
+- reserved words:
+    num char while if else input output start end
+
+b. identifiers
+- a sequence of letters, '_' and '-', in any order
+identifier ::= character | character{character}
+character ::= 'a' | 'b' | 'c' | ... | 'z' | '_' | '-'
+
+c. constants
