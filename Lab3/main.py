@@ -8,8 +8,9 @@ def main():
 
     print('a = ' + str(st.find('a')))
 
-    st.remove('a');
-    print(st.find('a'));
+    print('This was just removed: ' + str(st.remove('a')))
+
+    print('Trying to find \'a\' now: ' + str(st.find('a')))
 
 if __name__ == "__main__":
     main()

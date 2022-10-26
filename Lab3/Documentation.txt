@@ -1,0 +1,29 @@
+The SymbolTable is implemented using a simple hashtable.
+
+hash (key)
+    iterates through the key character by character, and calculates the hash by adding the index of the char to the length of the key and calculating its power to the unicode value of said character. The resulted hash is returned.
+    Arguments:
+        key: a string
+    Returns: 
+        hash: a string
+
+insert (key, value)
+    takes an identifier and a value, calculates the hash of the key, and adds a node in the linked list present at the index of the hash value.
+    Arguments:
+        key: a string
+        value: any
+
+find (key)
+    takes a key and calculates its hash, then searches through the linked list of nodes present at the index of the hash value. Returns the value of the node if found.
+    Arguments:
+        key: a string
+    Returns:
+        value: any
+
+remove (key)
+    takes a key and calculates its hash,
+    then searches through the linked list of nodes present at the index of the hash value, and removes the node that has that key if it finds it.
+    Arguments:
+        key: a string
+    Returns:
+        value: any

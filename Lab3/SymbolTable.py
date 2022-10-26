@@ -1,7 +1,7 @@
 class SymbolTable:
     def __init__(self):
         self.size = 0
-        self.capacity = 40
+        self.capacity = 100
         self.lls = [None] * self.capacity
 
     def insert(self, key, value):
@@ -19,7 +19,7 @@ class SymbolTable:
             prev = node
             node = node.next
         prev.next = Node(key, value)
-        return
+        return 
 
     def find(self, key):
         index = self.hash(key)
@@ -60,8 +60,8 @@ class SymbolTable:
     def hash(self, key):
         hash = 0
 
-        for count, value in enumerate(key):
-            hash += (count + len(key)) ** ord(value)
+        for index, value in enumerate(key):
+            hash += (index + len(key)) ** ord(value)
 
             hash = hash % self.capacity
         return hash
