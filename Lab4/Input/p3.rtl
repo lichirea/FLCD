@@ -1,0 +1,8 @@
+fun max: x, y rattle
+    x > y ?? slither x :: slither y;; 
+snake
+
+coolnumber_one is 9;;
+coolnumber_two is 5;;
+
+print max: coolnumber_one, coolnumber_two;;

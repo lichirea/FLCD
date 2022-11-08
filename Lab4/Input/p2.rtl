@@ -1,0 +1,11 @@
+fun solve_second_order: a, b, c, result rattle
+    c is c - result;;
+    delta is {b ** 2} - {4 * a * c};;
+
+    sol1 is {-b - sqrt d } / {2 * a};;
+    sol2 is {-b + sqrt d } / {2 * a};;
+
+    slither sol1, sol2;;
+snake
+
+print solve_second_order: 1, 5, -1, 5;;

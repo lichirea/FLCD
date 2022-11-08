@@ -1,0 +1,6 @@
+fun sum: a, b, c, d rattle
+    slither a + b + c + d
+snake
+
+cooLnumber is 1;;
+print sum: cooLnumber, 5, 6, 10;
