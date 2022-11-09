@@ -1,0 +1,30 @@
+
+Scanner(tokens, program):
+    initializez the scanner by creating a SymbolTable,
+    populating the SymbolTable with the tokens on each
+    line of the argument 'tokens', 
+    and readies the 'pif.out' file for execution 
+    Arguments:
+        tokens: a string
+        program: a string
+    
+Scanner.scan():
+    parses the program token by token, splitting the string
+    using a regex, and calls genPIF on each token
+    Returns:
+        true: if program is lexically CORRECT
+        false: otherwise
+
+Scanner.genPIF(token):
+    analyses the token, and if it is lexically correct,
+    it adds an entry to the PIF for the token
+    Returns:
+        true: if token is lexically CORRECT
+        false: otherwise
+
+Scanner.constant_or_identifier(token):
+    check whether the token is a constant, an identifier or neither
+    Returns:
+        "constant" if its a constant
+        "identifier" if its an identifier
+        -1 otherwise

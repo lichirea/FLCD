@@ -7,8 +7,9 @@ class Scanner:
     def __init__(self, tokens, program):
         self.st = SymbolTable()
 
+        self.keywords = []
         for token in tokens.splitlines():
-            self.st.insert("-1", token)
+            self.keywords.append(token)
 
         self.allowedchars = set(string.ascii_lowercase + '_' + string.digits)
         self.variable_count = 0
@@ -38,17 +39,30 @@ class Scanner:
         return True
 
     def genPIF(self, token):
-
-        index = self.st.has(token)
-        if index == None:
-            if set(token) <= self.allowedchars:
-                index = self.variable_count
-                self.st.insert(str(index), token)
-                self.variable_count += 1
-            else:
-                print('ERROR at token \'' + token +
-                      '\' on line ' + str(self.lineindex))
-                return False
-
-        self.pif.write(token + " -> " + str(index) + "\n")
+        
+        if token in self.keywords:
+            index = self.keywords.index(token)
+            self.pif.write(token + " -> " + "-1" + '\n')
+        else:
+            index = self.st.find(token)
+            if index == None:
+                if(self.constant_or_identifier(token) == -1):
+                    print('ERROR at token \'' + token +
+                        '\' on line ' + str(self.lineindex))
+                    return False
+                else:
+                    index = self.st.insert(token, index)
+                    self.variable_count += 1;
+                
+            id = self.constant_or_identifier(token)
+            self.pif.write(str(id) + " -> " + str(index) + '\n')
+            
         return True
+
+    def constant_or_identifier(self, token):
+        if set(token) <= set(string.digits):
+            return 'constant'
+        elif set(token) <= self.allowedchars:
+            return 'identifier'
+        else:
+            return -1

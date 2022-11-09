@@ -11,7 +11,7 @@ class SymbolTable:
 
         if node is None:
             self.lls[index] = Node(key, value)
-            return
+            return index
 
         # if collision:
         prev = node
@@ -19,7 +19,7 @@ class SymbolTable:
             prev = node
             node = node.next
         prev.next = Node(key, value)
-        return
+        return index
 
     def find(self, key):
         index = self.hash(key)
@@ -58,13 +58,7 @@ class SymbolTable:
             return result
 
     def hash(self, key):
-        hash = 0
-
-        for index, value in enumerate(key):
-            hash += (index + len(key)) ** ord(value)
-
-            hash = hash % self.capacity
-        return hash
+        return hash(key) % self.capacity
 
     def has(self, value):
         for ll in self.lls:
