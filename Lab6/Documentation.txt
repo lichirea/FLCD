@@ -1,0 +1,24 @@
+
+FA.scan_input(file):
+    reads through the give file and constructs the finite automata in memory;
+    also prints out whether the FA is 
+    Arguments:
+        file: a string
+
+FA.check_seq()
+    initializez a final state, then applies all applicable transitions to it according to the sequence
+    if the final state is valid, prints 'ACCEPTED'
+    otherwise prints 'NOT ACCEPTED'
+    Arguments:
+    seq: a list of strings
+
+
+Format of FA.in file:
+- state ::= "p" | "q" | "r"
+- initial_state ::= state
+- final_states ::= state {" " state}
+- states ::= state {" " state}
+- element ::= "a" | "b"
+- alphabet ::= element {" " element}
+- transition ::= state " " element " " state
+- transitions ::= transition {"\n" transition}

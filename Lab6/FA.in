@@ -1,7 +1,7 @@
 p q r
-a 
+a b
 p
 q
 p a q
 q a r
-r a q
+r b q
