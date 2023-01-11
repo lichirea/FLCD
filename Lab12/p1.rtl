@@ -1,0 +1,17 @@
+countBiggerThanTwo a b c rattle
+    count is 0;;
+    if a > 2
+    then count is count + 1;;
+    if b > 2
+    then count is count + 1;;
+    if c > 2
+    then count is count + 1;;
+    
+    slither count;;
+snake
+
+x is 5;;
+y is 6;;
+w is 1;;
+result is countBiggerThanTwo x y w;;
+print result;;
